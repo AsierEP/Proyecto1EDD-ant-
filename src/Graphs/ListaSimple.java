@@ -226,8 +226,6 @@ public class ListaSimple<T> {
         }
     }
     
-    
-    
-    
+   
     
 }

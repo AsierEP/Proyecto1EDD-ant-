@@ -111,7 +111,21 @@ public class Grafo {
             }
         }
     }
-      
+    
+    public void eliminarUsuario(String nombre){
+        int position = 0;
+        if(isEmpty()){
+            System.out.println("Error: grafo vacio");
+        }
+        else{
+            ListaSimple adyList = new ListaSimple();
+            adyList.get(position);
+        }
+            
+            
+            
+        }
+        
     public void print(){
         if(isEmpty()){
             System.out.println("Error: grafo vacio");

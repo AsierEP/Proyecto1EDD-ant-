@@ -4,6 +4,10 @@
  */
 package UIs;
 
+import Graphs.Grafo;
+import Graphs.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dell
@@ -34,8 +38,8 @@ public class ModifyGraph extends javax.swing.JFrame {
         Lab2 = new javax.swing.JLabel();
         Lab3 = new javax.swing.JLabel();
         Lab4 = new javax.swing.JLabel();
-        AddUSerTF = new javax.swing.JTextField();
-        AddrelationTF = new javax.swing.JTextField();
+        AddUserTF = new javax.swing.JTextField();
+        AddRelationTF = new javax.swing.JTextField();
         RemoveUserTF = new javax.swing.JTextField();
         RemoveRelationTF = new javax.swing.JTextField();
         AddUserButt = new javax.swing.JButton();
@@ -75,8 +79,8 @@ public class ModifyGraph extends javax.swing.JFrame {
         Lab4.setForeground(new java.awt.Color(255, 255, 255));
         Lab4.setText("Eliminar relación:");
         getContentPane().add(Lab4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 170, 40));
-        getContentPane().add(AddUSerTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 440, 50));
-        getContentPane().add(AddrelationTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 440, 50));
+        getContentPane().add(AddUserTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 440, 50));
+        getContentPane().add(AddRelationTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 440, 50));
         getContentPane().add(RemoveUserTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 440, 50));
         getContentPane().add(RemoveRelationTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 440, 50));
 
@@ -137,15 +141,31 @@ public class ModifyGraph extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddUserButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUserButtActionPerformed
-        // TODO add your handling code here:
+        String user;
+        try{
+            user = AddUserTF.getText();
+            Grafo adduser = new Grafo();
+            adduser.agregarVertice(user);
+            AddUserTF.setText(" ");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "El input no es válido");
+        }
     }//GEN-LAST:event_AddUserButtActionPerformed
 
     private void AddRelationButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddRelationButtActionPerformed
-        // TODO add your handling code here:
+        String relation;
+        try{
+            relation = AddRelationTF.getText();
+            Grafo addrelation = new Grafo();
+            addrelation.agregarRelacion(relation, relation);
+            AddUserTF.setText(" ");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "El input no es válido");
+        }
     }//GEN-LAST:event_AddRelationButtActionPerformed
 
     private void RemoveUserButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveUserButtActionPerformed
-        // TODO add your handling code here:
+        //
     }//GEN-LAST:event_RemoveUserButtActionPerformed
 
     private void RemoveRelationButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveRelationButtActionPerformed
@@ -195,9 +215,9 @@ public class ModifyGraph extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddRelationButt;
-    private javax.swing.JTextField AddUSerTF;
+    private javax.swing.JTextField AddRelationTF;
     private javax.swing.JButton AddUserButt;
-    private javax.swing.JTextField AddrelationTF;
+    private javax.swing.JTextField AddUserTF;
     private javax.swing.JButton BackToVisualizeButt;
     private javax.swing.JLabel Lab1;
     private javax.swing.JLabel Lab2;
