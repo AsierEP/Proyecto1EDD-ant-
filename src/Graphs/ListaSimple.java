@@ -227,5 +227,24 @@ public class ListaSimple<T> {
     }
     
    
+    public boolean exist(T dato)  {
+        if(isEmpty()){
+            return false;
+            
+        }
+        else{
+            Node pointer= head;
+            for(int i = 0 ; i<len(); i++){
+                if(pointer.getData() == dato){
+                    return true ; 
+                }
+            }
+        }
+        return false;
+    }
+
+    void append(Node<Vertice> Verticeaux) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

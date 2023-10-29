@@ -12,10 +12,12 @@ package Graphs;
 public class Vertice {
         private String nombre;
     private ListaSimple relaciones;
+    private boolean visited;
 
     public Vertice(String nombre) {
         this.nombre = nombre;
         this.relaciones = new ListaSimple();
+        this.visited=false;
     }
 
     public String getNombre() {

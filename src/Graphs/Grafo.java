@@ -150,6 +150,32 @@ public class Grafo {
     }
     
     
+    public ListaSimple dfs (Vertice vertice){
+        Stack<Vertice> pila = new Stack();
+        ListaSimple<Vertice> visitados = new ListaSimple();
+        
+        pila.push(vertice);
+        visitados.append(vertice);
+        
+        while (!pila.isEmpty()){
+            Node<Vertice> Verticeaux = pila.pop();
+            visitados.append(Verticeaux);
+            
+            ListaSimple adyList = Verticeaux.getRelaciones();
+            for(int i = 0 ; i<adyList.len(); i++){
+                Arista arista = (Arista) adyList.get(i);
+                if(!visitados.exist(arista.getVerticeB())){
+                    pila.push(arista.getVerticeB());
+                }
+            }
+            
+                    
+                    
+        }
+        return visitados;
+        
+    }
+    
     
     
 }
